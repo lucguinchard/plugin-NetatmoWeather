@@ -123,7 +123,7 @@
       "type":"info",
       "isHistorized" : 0,
       "subType":"numeric",
-      "generic_type": "TEMPERATURE",
+      "generic_type": "WEATHER_TEMPERATURE_MIN",
       "unite" : "°C",
       "template" : {
         "dashboard" : "core::line",
@@ -140,7 +140,7 @@
       "type":"info",
       "isHistorized" : 0,
       "subType":"numeric",
-      "generic_type": "TEMPERATURE",
+      "generic_type": "WEATHER_TEMPERATURE_MAX",
       "unite" : "°C",
       "template" : {
         "dashboard" : "core::line",
