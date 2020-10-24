@@ -8,7 +8,7 @@
         "de_DE": "Ermöglicht das Abrufen von Informationen von Netatmo-Wetterstationen",
         "pt_PT": "Permite recuperar informações das estações meteorológicas da Netatmo"
     },
-    "licence": "AGPL",
+    "licence": "GNU GPLv2",
     "author": "Loïc",
     "require": "3.2",
     "category": "weather",
