@@ -18,9 +18,11 @@
 
 /* * ***************************Includes********************************* */
 require_once __DIR__ . '/../../../../core/php/core.inc.php';
-if (!class_exists('netatmoApi')) {
-	require_once __DIR__ . '/netatmoApi.class.php';
-}
+require_once dirname(__FILE__) . '/../../3rdparty/Netatmo-API-PHP/Netatmo/autoload.php';
+
+use Netatmo\Clients\NAThermApiClient;
+use Netatmo\Common\NAScopes;
+
 class netatmoWeather extends eqLogic {
 	/*     * *************************Attributs****************************** */
 	
@@ -33,12 +35,12 @@ class netatmoWeather extends eqLogic {
 	
 	public static function getClient() {
 		if (self::$_client == null) {
-			self::$_client = new netatmoApi(array(
+			self::$_client = new NAThermApiClient(array(
 				'client_id' => config::byKey('client_id', 'netatmoWeather'),
 				'client_secret' => config::byKey('client_secret', 'netatmoWeather'),
 				'username' => config::byKey('username', 'netatmoWeather'),
 				'password' => config::byKey('password', 'netatmoWeather'),
-				'scope' => 'read_station',
+				'scope' => NAScopes::SCOPE_READ_STATION,
 			));
 		}
 		return self::$_client;
